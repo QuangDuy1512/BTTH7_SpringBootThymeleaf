@@ -28,7 +28,7 @@ public class CategoryController {
 	@GetMapping
 	public String listCategories(Model model,
 	                             @RequestParam(defaultValue = "0") int page,
-	                             @RequestParam(defaultValue = "10") int size,
+	                             @RequestParam(defaultValue = "5") int size,
 	                             @RequestParam(required = false) String keyword) {
 	    Page<Category> categories = service.listAll(keyword, page, size);
 	    model.addAttribute("categories", categories); // giữ nguyên Page
